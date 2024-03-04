@@ -1,5 +1,14 @@
+:host {
+  position: relative;
+}
 .textbox {
-    all: unset;
-    padding: 3px 6px;
-    border: 1px solid #ccc;
+  all: unset;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+}
+
+.ai-emojis {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
 }
