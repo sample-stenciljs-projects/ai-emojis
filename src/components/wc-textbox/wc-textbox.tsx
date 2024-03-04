@@ -1,4 +1,4 @@
-import { Component, Fragment, h } from "@stencil/core";
+import { Component, Fragment, State, h } from "@stencil/core";
 
 @Component({
   tag: "wc-textbox",
@@ -6,11 +6,17 @@ import { Component, Fragment, h } from "@stencil/core";
   scoped: true,
 })
 export class WcTextbox {
+  @State() emojiText: string;
+
+  private handleTextChange(event: InputEvent) {
+    this.emojiText = (event.target as HTMLInputElement).value;
+  }
+
   render() {
     return (
       <Fragment>
-        <input type="text"></input>
-        <ai-emojis text=""></ai-emojis>
+        <input type="text" onInput={this.handleTextChange}></input>
+        <ai-emojis text={this.emojiText}></ai-emojis>
       </Fragment>
     );
   }
