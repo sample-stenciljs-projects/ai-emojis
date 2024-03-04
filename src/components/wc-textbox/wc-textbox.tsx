@@ -26,7 +26,7 @@ export class WcTextbox {
           onInput={this.handleTextChange}
           class="textbox"
         ></input>
-        <ai-emojis token={this.emojiText} class="ai-emojis" />
+        <ai-emojis token={this.emojiText} api-key="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" class="ai-emojis" />
       </Fragment>
     );
   }
