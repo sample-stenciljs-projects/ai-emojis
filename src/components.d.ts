@@ -6,56 +6,47 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface AiEmojis {
+        "text": string;
+    }
+    interface WcTextbox {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLAiEmojisElement extends Components.AiEmojis, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLAiEmojisElement: {
+        prototype: HTMLAiEmojisElement;
+        new (): HTMLAiEmojisElement;
+    };
+    interface HTMLWcTextboxElement extends Components.WcTextbox, HTMLStencilElement {
+    }
+    var HTMLWcTextboxElement: {
+        prototype: HTMLWcTextboxElement;
+        new (): HTMLWcTextboxElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ai-emojis": HTMLAiEmojisElement;
+        "wc-textbox": HTMLWcTextboxElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface AiEmojis {
+        "text"?: string;
+    }
+    interface WcTextbox {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ai-emojis": AiEmojis;
+        "wc-textbox": WcTextbox;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ai-emojis": LocalJSX.AiEmojis & JSXBase.HTMLAttributes<HTMLAiEmojisElement>;
+            "wc-textbox": LocalJSX.WcTextbox & JSXBase.HTMLAttributes<HTMLWcTextboxElement>;
         }
     }
 }
