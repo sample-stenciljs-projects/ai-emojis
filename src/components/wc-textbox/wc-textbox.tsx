@@ -11,7 +11,7 @@ export class WcTextbox {
 
   private timeoutID;
 
-  private handleTextChange(event: InputEvent) {
+  handleTextChange(event: InputEvent) {
     clearTimeout(this.timeoutID);
     this.timeoutID = setTimeout(() => {
       this.emojiText = (event.target as HTMLInputElement).value;
@@ -21,8 +21,12 @@ export class WcTextbox {
   render() {
     return (
       <Fragment>
-        <input type="text" onInput={this.handleTextChange}></input>
-        <ai-emojis text={this.emojiText}></ai-emojis>
+        <input
+          type="text"
+          onInput={this.handleTextChange}
+          class="textbox"
+        ></input>
+        <ai-emojis token={this.emojiText} class="ai-emojis" />
       </Fragment>
     );
   }

@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AiEmojis {
-        "text": string;
+        "token": string;
     }
     interface WcTextbox {
     }
@@ -32,7 +32,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AiEmojis {
-        "text"?: string;
+        "token"?: string;
     }
     interface WcTextbox {
     }
