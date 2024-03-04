@@ -1,4 +1,5 @@
 import { Component, Fragment, State, h } from "@stencil/core";
+const DEBOUNCE_TIME = 300;
 
 @Component({
   tag: "wc-textbox",
@@ -8,8 +9,13 @@ import { Component, Fragment, State, h } from "@stencil/core";
 export class WcTextbox {
   @State() emojiText: string;
 
+  private timeoutID;
+
   private handleTextChange(event: InputEvent) {
-    this.emojiText = (event.target as HTMLInputElement).value;
+    clearTimeout(this.timeoutID);
+    this.timeoutID = setTimeout(() => {
+      this.emojiText = (event.target as HTMLInputElement).value;
+    }, DEBOUNCE_TIME);
   }
 
   render() {

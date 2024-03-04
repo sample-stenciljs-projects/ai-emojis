@@ -1,4 +1,4 @@
-import { Component, h } from "@stencil/core";
+import { Component, Prop, h } from "@stencil/core";
 
 @Component({
   tag: "ai-emojis",
@@ -6,7 +6,8 @@ import { Component, h } from "@stencil/core";
   scoped: true,
 })
 export class AiEmojis {
+  @Prop() text: string;
   render() {
-    return <span class="emojis"></span>;
+    return <span class="emojis">{this.text}</span>;
   }
 }
